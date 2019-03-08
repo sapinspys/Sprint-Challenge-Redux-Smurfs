@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FETCH_SMURFS = 'FETCH_SMURFS';
 export const ADD_SMURF = 'ADDING_SMURF';
-// export const DELETING_SMURF = 'DELETING_SMURF';
+export const DELETING_SMURF = 'DELETING_SMURF';
 export const UPDATING_SMURF = 'EDITING_SMURF';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
@@ -57,26 +57,25 @@ export const addSmurf = (smurfData) => dispatch => {
     })
 }
 
-// export const deletesmurf = (id) => dispatch => {
-//   dispatch ({ type: DELETING_smurf })
-//   axios
-//     .delete(
-//       `http://localhost:5000/api/smurfs/${id}`,
-//       {headers: {"authorization": localStorage.getItem('token')}},
-//     )
-//     .then(res => {
-//       dispatch({
-//         type: SUCCESS,
-//         payload: res.data,
-//       })
-//     })
-//     .catch(err => {
-//       dispatch({
-//         type: FAILURE,
-//         payload: err.response,
-//       })
-//     })
-// }
+export const deletesmurf = (id) => dispatch => {
+  dispatch ({ type: DELETING_SMURF })
+  axios
+    .delete(
+      `http://localhost:5000/api/smurfs/${id}`,
+    )
+    .then(res => {
+      dispatch({
+        type: SUCCESS,
+        payload: res.data,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response.data.Error,
+      })
+    })
+}
 
 export const updateSmurf = (id, smurfData) => dispatch => {
   dispatch ({ type: UPDATING_SMURF })

@@ -2,9 +2,17 @@ import React from 'react';
 
 import Smurf from './Smurf';
 
+const CardsContainer = {
+  border: '1px solid blue',
+  width: '500px',
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+}
+
 const Smurfs = props => {
   return (
-    <div>
+    <div style={CardsContainer}>
       {props.smurfs.map(smurf => {
         return <Smurf
           key={smurf.id}

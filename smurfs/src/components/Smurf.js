@@ -18,14 +18,14 @@ const card = {
   marginBottom: '20px',
   background: 'whitesmoke',
   border: 'none',
-  boxShadow: '0 0 10px white',
+  boxShadow: '0 0 10px black',
   maxHeight: '240px',
 }
 
 const cardTitle = {
   paddingBottom: '5px', 
   borderBottom: '1px solid silver', 
-  background: 'steelblue',
+  background: '#336699',
   padding: '10px 0',
   color: 'whitesmoke',
 }

@@ -12,10 +12,11 @@ const formStyles = {
   flexDirection: 'column',
   justifyContent: 'space-between',
   minHeight: '350px',
+  maxHeight: '400px',
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
-  boxShadow: '0 0 10px white',
+  boxShadow: '0 0 10px black',
 }
 
 class AddForm extends Component {

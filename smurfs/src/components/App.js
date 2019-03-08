@@ -19,9 +19,17 @@ const AppContainer = {
   paddingTop: '25px',
 }
 
+const FlexContainer = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  width: '820px',
+  margin: '0 auto',
+}
+
 const Titles = {
   boxShadow: '0 0 10px black',
-  background: 'darkslateblue',
+  background: '#2F4858',
+  border: '1px solid #DAF7DC',
   color: 'white',
   padding: '10px 0',
   width: '500px',
@@ -49,8 +57,10 @@ class App extends Component {
       <div style={AppContainer}>
         <h1 style={Titles}>SMURFS! 2.0 W/ Redux</h1>
         <div style={Titles}>Welcome to the smurf village!</div>
-        <AddForm />
-        <Smurfs smurfs={this.props.smurfs} />
+        <div style={FlexContainer}>
+          <AddForm />
+          <Smurfs smurfs={this.props.smurfs} />
+        </div>
       </div>
     );
   }

@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to the smurf village!</div>
+        <div>Welcome to the murf village!</div>
         <AddForm />
         <Smurfs smurfs={this.props.smurfs} />
       </div>

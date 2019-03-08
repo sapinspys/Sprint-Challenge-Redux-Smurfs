@@ -11,7 +11,7 @@ const formStyles = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  height: '350px',
+  minHeight: '350px',
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
@@ -47,6 +47,7 @@ class AddForm extends Component {
       return (
         <Form onSubmit={this.handleSubmit} style={formStyles}>
           <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
+          <Label style={{color:'red', fontSize: '0.8rem'}}>{this.props.error}</Label>
           <Label>
             Name:
             <Input type="text" 

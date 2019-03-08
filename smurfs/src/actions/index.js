@@ -52,7 +52,7 @@ export const addSmurf = (smurfData) => dispatch => {
     .catch(err => {
       dispatch({
         type: FAILURE,
-        payload: err.response,
+        payload: err.response.data.Error
       })
     })
 }

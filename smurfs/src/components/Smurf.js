@@ -19,7 +19,8 @@ const card = {
   background: 'whitesmoke',
   border: 'none',
   boxShadow: '0 0 10px black',
-  maxHeight: '240px',
+  maxHeight: '190px',
+  border: '1px solid white'
 }
 
 const cardTitle = {
@@ -103,8 +104,8 @@ class Smurf extends React.Component {
     return (
       <Card style={card}>
         <h3 style={cardTitle}>{this.props.smurf.name}</h3>
-        <p><strong>Age</strong>:<br />{this.props.smurf.age}</p>
-        <p><strong>Height</strong>:<br />{this.props.smurf.height}</p>
+        <p><strong>Age</strong>: {this.props.smurf.age}</p>
+        <p><strong>Height</strong>: {this.props.smurf.height}</p>
         <div style={buttonContainer}>
           <Dropdown isOpen={this.state.dropdownOpen} 
             toggle={() => this.toggle()} >

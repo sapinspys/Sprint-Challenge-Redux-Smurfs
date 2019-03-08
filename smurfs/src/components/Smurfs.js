@@ -3,7 +3,6 @@ import React from 'react';
 import Smurf from './Smurf';
 
 const CardsContainer = {
-  border: '1px solid blue',
   width: '500px',
   display: 'flex',
   flexWrap: 'wrap',

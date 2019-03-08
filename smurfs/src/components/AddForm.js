@@ -12,11 +12,12 @@ const formStyles = {
   flexDirection: 'column',
   justifyContent: 'space-between',
   minHeight: '350px',
-  maxHeight: '400px',
+  maxHeight: '480px',
   background: 'whitesmoke',
   padding: '20px',
   borderRadius: '5px',
   boxShadow: '0 0 10px black',
+  border: '1px solid white',
 }
 
 class AddForm extends Component {
@@ -47,7 +48,7 @@ class AddForm extends Component {
     render() {
       return (
         <Form onSubmit={this.handleSubmit} style={formStyles}>
-          <Label style={{color:'gray', fontSize: '1.4rem'}}>Add a Friend</Label>
+          <Label style={{color:'gray', fontSize: '1.4rem'}}>Add Smurfs to the Village!</Label>
           <Label style={{color:'red', fontSize: '0.8rem'}}>{this.props.error}</Label>
           <Label>
             Name:

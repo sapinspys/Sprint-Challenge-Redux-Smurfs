@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { getSmurfs, addSmurf } from '../actions';
 
+import AddForm from './AddForm';
 import Smurfs from './Smurfs';
 
 /*

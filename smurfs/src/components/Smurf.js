@@ -136,7 +136,7 @@ class Smurf extends React.Component {
                   <Input type="text" 
                     value={this.state.height} 
                     onChange={this.handleChange} 
-                    name='email' />
+                    name='height' />
                 </Label>
                 <Button color='primary' block>Submit</Button>
               </Form>

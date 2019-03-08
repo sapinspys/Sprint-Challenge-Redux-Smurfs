@@ -23,11 +23,12 @@ class App extends Component {
     if (this.props.fetchingSmurfs) {
       return <h1>LOADING</h1>;
     }
-    
+
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
         <div>Welcome to the smurf village!</div>
+        <AddForm />
         <Smurfs smurfs={this.props.smurfs} />
       </div>
     );

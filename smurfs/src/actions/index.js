@@ -18,7 +18,7 @@ export const FAILURE = 'FAILURE';
    D - deleteSmurf
 */
 
-export const fetchSmurfs = () => dispatch => {
+export const getSmurfs = () => dispatch => {
   dispatch ({ type: FETCH_SMURFS })
   axios
     .get('http://localhost:3333/smurfs')
@@ -36,7 +36,7 @@ export const fetchSmurfs = () => dispatch => {
     })
 }
 
-export const addsmurf = (smurfData) => dispatch => {
+export const addSmurf = (smurfData) => dispatch => {
   dispatch ({ type: ADD_SMURF })
   axios
     .post(

@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import { connect } from 'react-redux';
-import { getSmurfs, addSmurf } from '../actions';
+import { getSmurfs } from '../actions';
 
 import AddForm from './AddForm';
 import Smurfs from './Smurfs';
 
-/*
- to wire this component up you're going to need a few things.
- I'll let you do this part on your own. 
- Just remember, `how do I `connect` my components to redux?`
- `How do I ensure that my component links the state to props?`
- */
+// INLINE STYLES
+const AppContainer = {
+  textAlign: 'center',
+  paddingTop: '25px',
+}
+
+const Titles = {
+  boxShadow: '0 0 10px black',
+  background: 'darkslateblue',
+  color: 'white',
+  padding: '10px 0',
+  width: '500px',
+  borderRadius: '5px',
+  margin: '0 auto',
+  marginBottom: '25px',
+}
 
 class App extends Component {
 
@@ -26,9 +35,9 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to the murf village!</div>
+      <div style={AppContainer}>
+        <h1 style={Titles}>SMURFS! 2.0 W/ Redux</h1>
+        <div style={Titles}>Welcome to the smurf village!</div>
         <AddForm />
         <Smurfs smurfs={this.props.smurfs} />
       </div>
@@ -39,8 +48,9 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     smurfs: state.smurfs,
-    fetchingSmurfs: state.fetchingSmurfs
+    fetchingSmurfs: state.fetchingSmurfs,
+    error: state.error,
   }
 }
 
-export default connect(mapStateToProps, { getSmurfs, addSmurf })(App);
+export default connect(mapStateToProps, { getSmurfs })(App);

@@ -6,7 +6,14 @@ import { getSmurfs } from '../actions';
 import AddForm from './AddForm';
 import Smurfs from './Smurfs';
 
+import { Spinner } from 'reactstrap';
+
 // INLINE STYLES
+const loading = {
+  textAlign: 'center',
+  marginTop: '150px',
+}
+
 const AppContainer = {
   textAlign: 'center',
   paddingTop: '25px',
@@ -31,7 +38,11 @@ class App extends Component {
 
   render() {
     if (this.props.fetchingSmurfs) {
-      return <h1>LOADING</h1>;
+      return (
+        <header style={loading}>
+          <Spinner style={loading} color='light' />
+        </header>
+      )
     }
 
     return (

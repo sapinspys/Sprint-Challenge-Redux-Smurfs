@@ -65,7 +65,7 @@ class AddForm extends Component {
           <Label>
             Height:
             <Input type="text" 
-              value={this.state.email} 
+              value={this.state.height} 
               onChange={this.handleChange} 
               name='height' />
           </Label>

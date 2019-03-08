@@ -52,7 +52,7 @@ export const addSmurf = (smurfData) => dispatch => {
     .catch(err => {
       dispatch({
         type: FAILURE,
-        payload: err.response.data.Error
+        payload: err.response.data.Error,
       })
     })
 }
@@ -78,26 +78,25 @@ export const addSmurf = (smurfData) => dispatch => {
 //     })
 // }
 
-// export const editsmurf = (id, smurfData) => dispatch => {
-//   dispatch ({ type: EDITING_smurf })
-//   axios
-//     .put(
-//       `http://localhost:5000/api/smurfs/${id}`, 
-//       smurfData,
-//       {headers: {"authorization": localStorage.getItem('token')}},
-//       )
-//     .then(res => {
-//       dispatch({
-//         type: SUCCESS,
-//         payload: res.data,
-//       })
-//     })
-//     .catch(err => {
-//       dispatch({
-//         type: FAILURE,
-//         payload: err.response,
-//       })
-//     })
-// }
+export const editsmurf = (id, smurfData) => dispatch => {
+  dispatch ({ type: EDITING_SMURF })
+  axios
+    .put(
+      `http://localhost:3333/smurfs/${id}`, 
+      smurfData,
+      )
+    .then(res => {
+      dispatch({
+        type: SUCCESS,
+        payload: res.data,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: FAILURE,
+        payload: err.response.data.Error,
+      })
+    })
+}
 
 

@@ -7,7 +7,7 @@ const Smurfs = props => {
     <div>
       {props.smurfs.map(smurf => {
         return <Smurf
-          key={props.smurfs.indexOf(smurf)}
+          key={smurf.id}
           smurf={smurf} />
       })}
     </div>

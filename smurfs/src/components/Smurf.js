@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-// import { editFriend } from '../actions';
+import { updateSmurf } from '../actions';
 
 import { Card, 
   Button, 
@@ -79,7 +79,7 @@ class Smurf extends React.Component {
       const stateCopy = {...this.state};
       delete stateCopy.dropdownOpen;
       
-      // this.props.editFriend(id, stateCopy)
+      this.props.updateSmurf(id, stateCopy)
   
       this.setState(prevState => ({
         dropdownOpen: !prevState.dropdownOpen,
@@ -115,7 +115,7 @@ class Smurf extends React.Component {
               Edit
             </DropdownToggle>
             <DropdownMenu style={dropdownMenu}>
-              <Form 
+              <Form onSubmit={this.handleSubmit(this.props.smurf.id)}
                 style={formStyles} >
                 <Label>
                   Name:
@@ -138,7 +138,10 @@ class Smurf extends React.Component {
                     onChange={this.handleChange} 
                     name='height' />
                 </Label>
-                <Button color='primary' block>Submit</Button>
+                <Button color='primary' 
+                  block>
+                    Submit
+                </Button>
               </Form>
             </DropdownMenu>
           </Dropdown>
@@ -154,9 +157,9 @@ class Smurf extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    // editingFriend: state.friendReducer.fetchingFriends,
+    updatingSmurf: state.updatingSmurf,
     error: state.error,
   }
 }
 
-export default connect(mapStateToProps)(Smurf);
+export default connect(mapStateToProps, { updateSmurf })(Smurf);

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const FETCH_SMURFS = 'FETCH_SMURFS';
 export const ADD_SMURF = 'ADDING_SMURF';
 // export const DELETING_SMURF = 'DELETING_SMURF';
-// export const EDITING_SMURF = 'EDITING_SMURF';
+export const UPDATING_SMURF = 'EDITING_SMURF';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 
@@ -78,8 +78,8 @@ export const addSmurf = (smurfData) => dispatch => {
 //     })
 // }
 
-export const editsmurf = (id, smurfData) => dispatch => {
-  dispatch ({ type: EDITING_SMURF })
+export const updateSmurf = (id, smurfData) => dispatch => {
+  dispatch ({ type: UPDATING_SMURF })
   axios
     .put(
       `http://localhost:3333/smurfs/${id}`, 

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const FETCH_SMURFS = 'FETCH_SMURFS';
-export const ADD_SMURF = 'ADDING_SMURF';
-export const DELETING_SMURF = 'DELETING_SMURF';
-export const UPDATING_SMURF = 'EDITING_SMURF';
+export const ADD_SMURF = 'ADD_SMURF';
+export const DELETE_SMURF = 'DELETE_SMURF';
+export const UPDATE_SMURF = 'UPDATE_SMURF';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 
@@ -57,12 +57,10 @@ export const addSmurf = (smurfData) => dispatch => {
     })
 }
 
-export const deletesmurf = (id) => dispatch => {
-  dispatch ({ type: DELETING_SMURF })
+export const deleteSmurf = (id) => dispatch => {
+  dispatch ({ type: DELETE_SMURF })
   axios
-    .delete(
-      `http://localhost:5000/api/smurfs/${id}`,
-    )
+    .delete(`http://localhost:3333/smurfs/${id}`)
     .then(res => {
       dispatch({
         type: SUCCESS,
@@ -78,7 +76,7 @@ export const deletesmurf = (id) => dispatch => {
 }
 
 export const updateSmurf = (id, smurfData) => dispatch => {
-  dispatch ({ type: UPDATING_SMURF })
+  dispatch ({ type: UPDATE_SMURF })
   axios
     .put(
       `http://localhost:3333/smurfs/${id}`, 

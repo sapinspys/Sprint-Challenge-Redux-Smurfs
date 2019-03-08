@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { updateSmurf } from '../actions';
+import { updateSmurf, deleteSmurf } from '../actions';
 
 import { Card, 
   Button, 
@@ -146,7 +146,8 @@ class Smurf extends React.Component {
             </DropdownMenu>
           </Dropdown>
           <Button color='danger'
-            style={button} >
+            style={button} 
+            onClick={() => this.props.deleteSmurf(this.props.smurf.id)} >
               Delete
           </Button>
         </div>
@@ -162,4 +163,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { updateSmurf })(Smurf);
+export default connect(mapStateToProps, { updateSmurf, deleteSmurf })(Smurf);

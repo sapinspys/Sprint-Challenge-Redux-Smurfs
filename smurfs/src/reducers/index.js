@@ -16,7 +16,7 @@ import {FETCH_SMURFS,
 */
 
 const initialState = {
-  friends: [],
+  smurfs: [],
   fetchingSmurfs: false,
   addingSmurf: false,
   error: null,
@@ -32,32 +32,32 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case FETCH_FRIENDS:
+    case FETCH_SMURFS:
       return {
         ...state,
-        fetchingFriends: true,
+        fetchingSmurfs: true,
         error: null,
       }
-    case ADDING_FRIEND:
+    case ADD_SMURF:
       return {
         ...state,
-        addingFriend: true,
+        addingSmurf: true,
         error:null,
       }
     case SUCCESS:
       return {
         ...state,
-        friends: action.payload,
-        fetchingFriends: false,
-        addingFriend: false,
+        smurfs: action.payload,
+        fetchingSmurfs: false,
+        addingSmurf: false,
         error: null,
       }
     case FAILURE:
       return {
         ...state,
-        friends: [],
-        fetchingFriends: false,
-        addingFriend: false,
+        smurfs: [],
+        fetchingSmurfs: false,
+        addingSmurf: false,
         error: action.payload,
       }
     default:
